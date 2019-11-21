@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane onKeyPressed="#handleEnterAction" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.addSubcategoryController">
+   <children>
+      <AnchorPane prefHeight="0.0" prefWidth="348.0" style="-fx-background-color: linear-gradient(to top RIGHT, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);">
+         <children>
+            <JFXTextField fx:id="subcategoryTextField" layoutX="54.0" layoutY="95.0" prefHeight="39.0" prefWidth="263.0" promptText="Enter new  Subcategory name here" style="-FX-PROMPT-TEXT-FILL: WHITE; -FX-TEXT-FILL: white;">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </JFXTextField>
+            <JFXButton fx:id="addSubcategoryButton" buttonType="RAISED" layoutX="254.0" layoutY="151.0" onMouseClicked="#handleAddSubcategoryAction" prefHeight="80.0" prefWidth="80.0" style="-fx-background-radius: 50%; -fx-border-radius: 50%; -fx-border-width: 3px; -fx-border-color: WHITE;" styleClass="button-leftpane" stylesheets="@../style.css" text="Add to &#10;question &#10;   bank" textFill="#00a2d3">
+               <font>
+                  <Font size="12.0" />
+               </font></JFXButton>
+            <Label alignment="CENTER" layoutX="44.0" layoutY="14.0" prefHeight="25.0" prefWidth="280.0" text="Category Manager" textFill="WHITE">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+            <ComboBox fx:id="categoryComboBox" layoutX="47.0" layoutY="56.0" prefHeight="31.0" prefWidth="233.0" promptText="select category" styleClass="jfx-combo-box-new" stylesheets="@../cssComboBoxes.css" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

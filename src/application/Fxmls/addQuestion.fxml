@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane hbarPolicy="ALWAYS" prefHeight="938.0" prefWidth="1000.0" vbarPolicy="ALWAYS" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.addQuestionController">
+   <content>
+      <StackPane prefHeight="963.0" prefWidth="840.0" style="-fx-background-color: #202020;">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="963.0" prefWidth="1303.0" style="-fx-background-color: linear-gradient(to bottom left, #1e5799 0%,#2989d8 40%,#207cca 51%,#7db9e8 70%); -fx-border-color: white; -fx-border-width: 3px;">
+               <children>
+                  <VBox layoutX="172.0" layoutY="40.0" prefHeight="776.0" prefWidth="863.0" spacing="25.0" style="-fx-prompt-text-fill: white;">
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                     <children>
+                        <HBox alignment="BASELINE_LEFT" prefHeight="45.0" prefWidth="833.0" spacing="10.0">
+                           <children>
+                              <JFXTextArea fx:id="addQuestionTextArea" prefHeight="65.0" prefWidth="800.0" style="-fx-text-fill: white; -fx-prompt-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextArea>
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionCategory" focusColor="WHITE" onAction="#handleCategorySelectionAction" prefHeight="49.0" prefWidth="200.0" promptText="select category" style="-fx-prompt-text-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="WHITE" />
+                              <Label fx:id="errorLabelCategory" prefHeight="30.0" prefWidth="224.0" text="*Please select category" textFill="#960020" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionSubcategory" focusColor="WHITE" onAction="#handleSubcategorySelectionAction" prefHeight="30.0" prefWidth="200.0" promptText="select sub category" style="-fx-prompt-text-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="WHITE" />
+                              <Label fx:id="errorLabelsubcategory" prefHeight="30.0" prefWidth="392.0" text="*Please select Subcategory" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_CENTER" prefHeight="45.0" prefWidth="833.0" spacing="10.0">
+                           <children>
+                              <JFXButton fx:id="addQuestionImage" alignment="BOTTOM_LEFT" buttonType="RAISED" onMouseClicked="#addImageAction" prefHeight="35.0" prefWidth="1074.0" text="Click to add image" textFill="WHITE">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXButton>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionType" focusColor="WHITE" onAction="#handleTypeSelectedAction" prefHeight="13.0" prefWidth="200.0" promptText="select type" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="WHITE" />
+                              <Label fx:id="errorLabelType" prefHeight="30.0" prefWidth="160.0" text="*Please select a type" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionDifficulty" focusColor="WHITE" onAction="#handleDifficultySelectedAction" prefHeight="30.0" prefWidth="200.0" promptText="select difficulty level" style="-jfx-focus-color: white; -jfx-unfocus-color: white; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="#2a2e37" />
+                              <Label fx:id="errorLabelDifficulty" prefHeight="30.0" prefWidth="283.0" text="*Please select a level of difficulty" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXTextField fx:id="addQuestionFirstChoice" prefHeight="43.0" prefWidth="640.0" style="-fx-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="errorLabelChoice1" prefHeight="30.0" prefWidth="160.0" text="*Please enter the option" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXTextField fx:id="addQuestionSecondChoice" prefHeight="46.0" prefWidth="640.0" style="-fx-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="errorLabelChoice2" prefHeight="30.0" prefWidth="160.0" text="*Please enter the option" textFill="RED" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="833.0" spacing="10.0">
+                           <children>
+                              <JFXTextField fx:id="addQuestionThirdChoice" prefHeight="56.0" prefWidth="640.0" style="-fx-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="errorLabelChoice3" prefHeight="30.0" prefWidth="160.0" text="*Please enter the option" textFill="RED" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXTextField fx:id="addQuestionFourthChoice" prefHeight="53.0" prefWidth="640.0" style="-fx-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="errorLabelChoice4" prefHeight="30.0" prefWidth="160.0" text="*Please enter the option" textFill="RED" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" prefHeight="45.0" prefWidth="800.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionCorrectChoice" onAction="#handleCorrectAnswerSelectedAction" prefHeight="30.0" prefWidth="200.0" promptText="Select correct option" style="-jfx-focus-color: white; -jfx-unfocus-color: white; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="BLACK" />
+                              <Label fx:id="errorLabelCorrectAnswer" prefHeight="30.0" prefWidth="238.0" text="*Please enter the correct option" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="BOTTOM_LEFT" maxHeight="57.0" prefHeight="45.0" prefWidth="833.0" spacing="10.0" VBox.vgrow="SOMETIMES">
+                           <children>
+                              <JFXTextField fx:id="addQuestionMarks" onKeyTyped="#marksCheck" prefHeight="23.0" prefWidth="640.0" style="-fx-text-fill: white;">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </JFXTextField>
+                              <Label fx:id="errorLabelMarks" prefHeight="30.0" prefWidth="160.0" text="*Please enter the marks" textFill="#960020" visible="false" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER_LEFT" layoutX="15.0" layoutY="855.0" prefHeight="45.0" prefWidth="833.0" spacing="10.0">
+                           <children>
+                              <JFXComboBox fx:id="addQuestionTime" focusColor="#2a2e37" onAction="#handleTimeSelectedAction" prefHeight="30.0" prefWidth="200.0" promptText="select time assigned" style="-jfx-focus-color: white; -jfx-unfocus-color: white; -fx-prompt-text-fill: white; -fx-text-fill: white; -fx-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" unFocusColor="#2a2e37" />
+                              <Label fx:id="errorLabelTimeAssigned" prefHeight="30.0" prefWidth="552.0" text="*Please enter the time assigned" textFill="#860a0a" visible="false" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <VBox layoutX="-3.0" layoutY="40.0" prefHeight="776.0" prefWidth="179.0" spacing="20.0">
+                     <children>
+                        <HBox alignment="BASELINE_LEFT" prefHeight="61.0" prefWidth="166.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Question ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="12.0" prefWidth="166.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Category">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="15.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="49.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Subcategory">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="235.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="39.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Add image">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="235.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Type">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="455.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="30.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Difficulty ">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="565.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="40.0" prefWidth="150.0" style="-fx-text-fill: white;" text="First choice">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="675.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="38.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Second choice">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="785.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Third choice">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="832.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="43.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Fourth choice">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="843.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="44.0" prefWidth="150.0" style="-fx-text-fill: white;" text="Corrrect choice">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="851.0" prefHeight="45.0" prefWidth="160.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="36.0" prefWidth="150.0" promptText="Marks assigned" style="-fx-text-fill: white;" text="Marks assigned">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                                 <cursor>
+                                    <Cursor fx:constant="NONE" />
+                                 </cursor>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                        <HBox alignment="BASELINE_LEFT" layoutX="15.0" layoutY="858.0" prefHeight="46.0" prefWidth="166.0">
+                           <children>
+                              <JFXTextField alignment="CENTER" editable="false" prefHeight="42.0" prefWidth="166.0" style="-fx-text-fill: white;" text="Time assigned In minutes">
+                                 <font>
+                                    <Font size="13.0" />
+                                 </font>
+                              </JFXTextField>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <JFXButton fx:id="addButton" alignment="CENTER" buttonType="RAISED" layoutX="706.0" layoutY="805.0" onMouseClicked="#handleAddButtonAction" prefHeight="100.0" prefWidth="100.0" ripplerFill="#003f61" style="-fx-border-color: white; -fx-background-radius: 50%; -fx-border-radius: 50%; -fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);" styleClass="login-button" stylesheets="@../style.css" text="Add to&#10;Question &#10;Bank" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="12.0" />
+                     </font>
+                  </JFXButton>
+                  <Label alignment="CENTER" layoutY="-11.0" prefHeight="63.0" prefWidth="1036.0" text="Questions Manager" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </content>
+</ScrollPane>

@@ -1,0 +1,48 @@
+.titled-pane 
+{
+-fx-skin: "com.sun.javafx.scene.control.skin.TitledPaneSkin";    
+-fx-text-fill:  black;
+}
+.titled-pane > .title 
+{
+-fx-background-color:   linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+-fx-background-insets: 0, 1, 2;
+-fx-background-radius: 5 5 0 0, 4 4 0 0, 3 3 0 0;
+-fx-padding: 0.166667em 0.833333em 0.25em 0.833333em; /* 2 10 3 10 */
+}
+
+.titled-pane:focused > .title 
+{
+-fx-color:  linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+}
+
+.titled-pane > .title > .arrow-button 
+{
+-fx-background-color: transparent;
+}
+
+.titled-pane > .title > .arrow-button .arrow 
+{
+-fx-background-insets: 1 0 -1 0, 0;
+-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; 
+-fx-shape: "M 0 0 h 7 l -3.5 4 z";
+}
+
+.titled-pane:collapsed > .title > .arrow-button .arrow 
+{
+-fx-rotate: -90;
+}
+
+.titled-pane > *.content 
+{
+-fx-background-color:  linear-gradient(to bottom left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);
+-fx-background-insets: 0, 0 1 1 1;
+-fx-padding: 0.167em;
+ }
+
+.titled-pane:focused > .title > .arrow-button .arrow 
+{
+-fx-background-color:   black;
+-fx-background-insets: 1 0 -1 0, 0;
+-fx-padding: 0.25em 0.3125em 0.25em 0.3125em; 
+}

@@ -1,0 +1,6 @@
+.accordion .titled-pane .title {
+    -fx-background-color: transparent ;
+}
+.accordion .titled-pane > *.content{
+    -fx-background-color: transparent ;
+}

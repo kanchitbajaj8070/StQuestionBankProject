@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<StackPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.addUserController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="237.0" prefWidth="333.0" style="-fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);">
+         <children>
+            <Label alignment="BOTTOM_CENTER" layoutY="1.0" prefHeight="27.0" prefWidth="333.0" text="ADD USER" textAlignment="CENTER" textFill="#e0e0e0">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <VBox layoutX="5.0" layoutY="58.0" prefHeight="98.0" prefWidth="324.0" spacing="5.0">
+               <children>
+                  <HBox prefHeight="45.0" prefWidth="324.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="20.0" prefWidth="160.0" text="Username" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="usernameText" promptText="enter username here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="jfx-text-field" stylesheets="@../style1.css">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </JFXTextField>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="10.0" prefHeight="53.0" prefWidth="324.0" spacing="20.0">
+                     <children>
+                        <Label prefHeight="25.0" prefWidth="160.0" text="Category Assigned" textFill="#e0e0e0">
+                           <font>
+                              <Font name="Arial" size="14.0" />
+                           </font>
+                        </Label>
+                        <ComboBox fx:id="selectCategoryComboBox" prefHeight="31.0" prefWidth="184.0" promptText="select category" style="-fx-background-color: #E0E0E0; -fx-text-fill: white; -fx-label-text-fill: white; -fx-inner-fill: white;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+            <JFXButton fx:id="addUserButton" buttonType="RAISED" layoutX="257.0" layoutY="148.0" onMouseClicked="#handleAddUserAction" prefHeight="75.0" prefWidth="76.0" ripplerFill="#d82e5d" style="-fx-border-color: #E0E0E0; -fx-border-width: 1.5px; -fx-border-radius: 50%; -fx-background-radius: 50%;" text="Add to &#10;  users" textFill="WHITE" />
+         </children>
+      </AnchorPane>
+   </children>
+</StackPane>

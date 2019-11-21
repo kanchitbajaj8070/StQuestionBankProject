@@ -1,0 +1,8 @@
+.jfx-combo-box-new{
+    -fx-background-color: transparent;
+    -fx-padding: 2 2;
+}
+.jfx-combo-box-new.label {
+	-fx-background-color:transparent;
+	-fx-text-fill: white;
+}

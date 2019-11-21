@@ -1,0 +1,23 @@
+.choice-box {
+    -fx-font-size: 12px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+    -fx-background-color: transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-color: #333645;
+  
+}
+.choice-box.label {
+    -fx-font-size: 12px;
+    -fx-prompt-text-fill: white;
+    -fx-text-fill: white;
+}
+
+
+.choice-box .list-cell:filled:selected .text {
+ -fx-text-fill:white;
+}
+
+.choice-box .arrow {
+    -fx-background-color: black;   
+}

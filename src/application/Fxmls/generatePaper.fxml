@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXSpinner?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<ScrollPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.generatePaperController">
+   <content>
+      <StackPane alignment="CENTER_RIGHT" onMouseClicked="#clearSelection" prefHeight="960.0" prefWidth="1280.0" style="-fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); -fx-border-color: white; -fx-border-width: 3px;">
+         <children>
+            <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="938.0" prefWidth="1274.0" style="-fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);">
+               <children>
+                  <StackPane layoutX="3.0" layoutY="435.0" prefHeight="512.0" prefWidth="717.0">
+                     <children>
+                        <TableView fx:id="currentStatusTable" prefHeight="517.0" prefWidth="717.0">
+                           <columns>
+                              <TableColumn fx:id="categoryColumn" editable="false" prefWidth="123.66665649414062" text="Category" />
+                              <TableColumn fx:id="subcategoryColumn" editable="false" minWidth="0.0" prefWidth="140.99998474121094" text="Subcategory" />
+                              <TableColumn fx:id="difficultyColumn" editable="false" prefWidth="140.0" text="Difficulty" />
+                              <TableColumn fx:id="typeColumn" editable="false" prefWidth="155.0" text="Type" />
+                              <TableColumn fx:id="noOfQuestionColumn" editable="false" prefWidth="138.0" text="No of Questions" />
+                           </columns>
+                           <contextMenu>
+                              <ContextMenu>
+                                 <items>
+                                    <MenuItem fx:id="deleteQuestionMenuItem" mnemonicParsing="false" onAction="#handleDeleteAction" text="delete" />
+                                 </items>
+                              </ContextMenu>
+                           </contextMenu>
+                           <padding>
+                              <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                           </padding>
+                        </TableView>
+                     </children>
+                  </StackPane>
+                  <Label alignment="BOTTOM_CENTER" layoutX="1.0" layoutY="227.0" prefHeight="36.0" prefWidth="196.0" style="-fx-text-fill: white;" text="Add Choices here" textFill="#d82e5d">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="9.0" layoutY="279.0" prefHeight="72.0" prefWidth="705.0" spacing="5.0">
+                     <children>
+                        <VBox prefHeight="62.0" prefWidth="215.0" spacing="10.0">
+                           <children>
+                              <ComboBox fx:id="categoryComboBox" onAction="#handleCategorySelectionAction" prefHeight="31.0" prefWidth="300.0" promptText="select Category" style="-fx-background-color: E0E0E0;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" />
+                              <ComboBox fx:id="subcategoryComboBox" onMouseClicked="#handleSubcategorySelectionAction" prefHeight="31.0" prefWidth="300.0" promptText="select Subcategory" style="-fx-background-color: E0E0E0;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" />
+                           </children>
+                        </VBox>
+                        <VBox prefHeight="72.0" prefWidth="173.0" spacing="10.0">
+                           <children>
+                              <ComboBox fx:id="difficultyComboBox" onMouseClicked="#handleSubcategorySelectionAction" prefHeight="31.0" prefWidth="207.0" promptText="select Difficulty" style="-fx-background-color: E0E0E0;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" />
+                              <ComboBox fx:id="typeComboBox" layoutX="10.0" layoutY="10.0" onMouseClicked="#handleSubcategorySelectionAction" prefHeight="31.0" prefWidth="207.0" promptText="select Type" style="-fx-background-color: E0E0E0;" styleClass="choice-box" stylesheets="@../comboBoxStyle.css" />
+                           </children>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </VBox>
+                        <VBox prefHeight="200.0" prefWidth="187.0">
+                           <children>
+                              <JFXTextField fx:id="subcategoryQuestionNumberText" onKeyTyped="#entryCheck2" prefHeight="137.0" prefWidth="187.0" promptText="Enter Number of questions here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;">
+                                 <font>
+                                    <Font name="System Bold" size="12.0" />
+                                 </font></JFXTextField>
+                              <Label fx:id="errorLabelCategory" prefHeight="29.0" prefWidth="220.0" text="* Please select a category" textFill="#ff0d0d" visible="false" />
+                           </children>
+                        </VBox>
+                        <JFXButton fx:id="addButton" alignment="CENTER" buttonType="RAISED" onMouseClicked="#handleAddButtonAction" prefHeight="70.0" prefWidth="70.0" ripplerFill="WHITE" style="-fx-background-radius: 50%; -fx-border-color: white; -fx-border-radius: 50%; -fx-border-width: 3px; -fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);" styleClass="button-leftpane" stylesheets="@../style.css" text="Add" textFill="WHITE">
+                           <graphic>
+                              <FontAwesomeIconView fill="WHITE" glyphName="PLUS" wrappingWidth="10.428571701049805" />
+                           </graphic>
+                           <tooltip>
+                              <Tooltip text="click here to add sections and number of questions" />
+                           </tooltip>
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </HBox>
+                  <HBox alignment="BASELINE_CENTER" layoutY="93.0" prefHeight="30.0" prefWidth="718.0" spacing="10.0">
+                     <children>
+                        <Label prefHeight="21.0" prefWidth="262.0" text="Total No of questions to be generated" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="14.0" />
+                           </font>
+                        </Label>
+                        <JFXTextField fx:id="totalQuestionNumberText" alignment="BOTTOM_CENTER" onKeyTyped="#entryCheck" prefHeight="31.0" prefWidth="272.0" promptText="Enter total no of questions" style="-fx-prompt-text-fill: white; -fx-text-fill: white;">
+                           <font>
+                              <Font size="12.0" />
+                           </font>
+                           <tooltip>
+                              <Tooltip text="Enter total number of questions you want in paper here" />
+                           </tooltip>
+                        </JFXTextField>
+                        <Label fx:id="errorLabelConfirmButton" prefHeight="23.0" prefWidth="136.0" text="* Only integers allowed" textFill="#ff005e" visible="false" />
+                     </children>
+                  </HBox>
+                  <Label alignment="BOTTOM_CENTER" layoutX="-4.0" layoutY="394.0" prefHeight="25.0" prefWidth="690.0" style="-fx-text-fill: white;" text="Currently Entered Detials" textAlignment="CENTER" textFill="#d82e5d">
+                     <font>
+                        <Font name="System Bold" size="16.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="notEnoughQuestionsLabel" layoutX="383.0" layoutY="359.0" prefHeight="19.0" prefWidth="322.0" text="**Not enough questions of this subcategory" textFill="#ff0d5a" visible="false">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="13.0" layoutY="9.0" text="Questions Information" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="721.0" layoutY="-7.0" orientation="VERTICAL" prefHeight="957.0" prefWidth="0.0" />
+                  <VBox layoutX="753.0" layoutY="104.0" prefHeight="404.0" prefWidth="411.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="75.0" prefWidth="400.0" spacing="10.0">
+                           <children>
+                              <Label text="Paper Name" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="paperNameTextField" prefHeight="25.0" prefWidth="297.0" promptText="Enter paper name here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="75.0" prefWidth="400.0" spacing="10.0">
+                           <children>
+                              <Label text="Paper purpose" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="paperPurposeTextField" prefHeight="25.0" prefWidth="296.0" promptText="enter paper purpose here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="jfx-text-field" stylesheets="@../style1.css" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="110.0" prefHeight="75.0" prefWidth="400.0" spacing="10.0">
+                           <children>
+                              <Label text="Target College" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="paperTargetCollegeTextField" prefHeight="25.0" prefWidth="292.0" promptText="enter target college here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="jfx-text-field" stylesheets="@../style1.css" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="15.0" layoutY="185.0" prefHeight="75.0" prefWidth="400.0" spacing="10.0">
+                           <children>
+                              <Label text="Target Course" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXTextField fx:id="paperTargetCourseTextField" prefHeight="25.0" prefWidth="292.0" promptText="enter target course here" style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="jfx-text-field" stylesheets="@../style1.css" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="210.0" prefHeight="75.0" prefWidth="400.0" spacing="10.0">
+                           <children>
+                              <Label text="Exam Date" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <JFXDatePicker fx:id="paperExamDateTextField" defaultColor="#000f8f" editable="false" promptText="select date " style="-fx-prompt-text-fill: white; -fx-text-fill: white;" styleClass="jfx-date-picker" stylesheets="@../date-picker.css" />
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+                  <Label layoutX="745.0" layoutY="8.0" text="Paper Information" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="24.0" />
+                     </font>
+                  </Label>
+                  <JFXButton fx:id="generateButton" alignment="BASELINE_CENTER" buttonType="RAISED" layoutX="953.0" layoutY="508.0" onMouseClicked="#handleGenerateButtonAction" prefHeight="80.0" prefWidth="80.0" ripplerFill="WHITE" style="-fx-background-radius: 50%; -fx-border-color: white; -fx-border-radius: 50%; -fx-border-width: 3px; -fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%);" styleClass="button-leftpane" stylesheets="@../style.css" text="Generate&#10; Paper" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                     <tooltip>
+                        <Tooltip text="Click here to make a paper" />
+                     </tooltip>
+                  </JFXButton>
+                  <JFXSpinner fx:id="progressIndicator" layoutX="909.0" layoutY="575.0" prefHeight="48.0" prefWidth="196.0" visible="false" />
+               </children>
+            </AnchorPane>
+         </children>
+      </StackPane>
+   </content>
+</ScrollPane>

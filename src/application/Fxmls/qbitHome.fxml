@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneHome" prefHeight="516.0" prefWidth="895.0" style="-fx-background-color: linear-gradient(to bottom right, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); -fx-border-color: #505557; -fx-border-width: 3px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.homeController">
+   <children>
+      <Label fx:id="label0" alignment="BOTTOM_CENTER" layoutX="14.0" layoutY="33.0" prefHeight="35.0" prefWidth="159.0" text="User details" textAlignment="CENTER" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="24.0" />
+         </font>
+      </Label>
+      <VBox alignment="CENTER" layoutX="25.0" layoutY="77.0" prefHeight="152.0" prefWidth="853.0" spacing="5.0">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="620.0" spacing="10.0">
+               <children>
+                  <Label fx:id="label1" alignment="TOP_LEFT" prefHeight="27.0" prefWidth="200.0" text="Username" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setUsername" alignment="BASELINE_LEFT" prefHeight="23.0" prefWidth="400.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="620.0" spacing="10.0">
+               <children>
+                  <Label fx:id="label2" prefHeight="27.0" prefWidth="200.0" text="Role" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setRole" alignment="BASELINE_LEFT" prefHeight="29.0" prefWidth="400.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox layoutX="10.0" layoutY="60.0" prefHeight="40.0" prefWidth="311.0" spacing="10.0">
+               <children>
+                  <Label fx:id="label3" prefHeight="27.0" prefWidth="200.0" text="Category assigned" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="setCategory" alignment="BASELINE_LEFT" prefHeight="27.0" prefWidth="400.0" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <TitledPane animated="false" expanded="false" layoutX="21.0" layoutY="215.0" prefHeight="300.0" prefWidth="871.0" stylesheets="@../../../resources/css/titled-pane.css" text="Click Here to change password">
+         <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="224.0" prefWidth="879.0">
+               <children>
+                  <VBox alignment="BOTTOM_CENTER" prefHeight="228.0" prefWidth="882.0" spacing="10.0">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="926.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="label4" prefHeight="25.0" prefWidth="200.0" text="Enter your Old Password" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="oldPasswordLabel" prefHeight="25.0" prefWidth="550.0" style="-fx-background-color: #F1F1F1; -fx-background-radius: 20px;" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="926.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="label5" prefHeight="25.0" prefWidth="200.0" text="Enter your new Password" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="newPasswordLabel" prefHeight="25.0" prefWidth="550.0" style="-fx-background-color: #F1F1F1; -fx-background-radius: 20px;" />
+                           </children>
+                        </HBox>
+                        <HBox layoutX="10.0" layoutY="50.0" prefHeight="40.0" prefWidth="926.0" spacing="10.0">
+                           <children>
+                              <Label fx:id="label6" prefHeight="25.0" prefWidth="200.0" text="Confirm your new Password" textFill="WHITE">
+                                 <font>
+                                    <Font name="System Bold" size="14.0" />
+                                 </font>
+                              </Label>
+                              <PasswordField fx:id="confirmPasswordLabel" prefHeight="25.0" prefWidth="550.0" style="-fx-background-color: #F1F1F1; -fx-background-radius: 20px;" />
+                           </children>
+                        </HBox>
+                        <JFXButton fx:id="changePasswordButton" alignment="BOTTOM_CENTER" buttonType="RAISED" onMouseClicked="#handleChangePasswordButtonAction" prefHeight="12.0" prefWidth="293.0" style="-fx-background-radius: 15px; -fx-border-color: white; -fx-border-radius: 15px; -fx-border-width: 3px;" styleClass="login-button" stylesheets="@../style.css" text="Change Password" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="14.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                     <padding>
+                        <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+                     </padding>
+                  </VBox>
+               </children>
+            </AnchorPane>
+         </content>
+      </TitledPane>
+   </children>
+</AnchorPane>

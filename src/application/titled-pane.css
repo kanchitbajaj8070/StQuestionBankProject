@@ -1,0 +1,30 @@
+.admin .titled-pane > .title {
+  -fx-background-color: blue, yellow, linear-gradient(to bottom, derive(coral, +50%), coral);
+}
+
+.connectivity {
+  -fx-text-fill: white;
+}
+
+.nerrors {
+  -fx-background-color: derive(-fx-focus-color, -15%);
+  -fx-padding: 5 8 5 8;
+  -fx-text-fill: white;
+}
+
+.connectivityErrorLabel {
+  -fx-text-fill: white;
+  -fx-padding: 0 40 0 3; 
+}
+
+.connectivity .titled-pane > .title {
+  -fx-background-color: -fx-box-border, -fx-inner-border, -fx-body-color;
+  -fx-background-insets: 0, 1, 2;
+  -fx-background-radius: 0 0 0 0, 0 0 0 0, 0 0 0 0;
+  -fx-padding: 0.166667em 1.166667em 0.25em 0; /* 2 14 3 0 */
+  -fx-color: -fx-focus-color;
+}
+
+.connectivity .titled-pane > .title > .arrow-button .arrow {
+  -fx-background-color: white;
+}

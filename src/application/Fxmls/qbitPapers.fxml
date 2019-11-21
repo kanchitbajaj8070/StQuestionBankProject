@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPanePapers" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#clearSelection" prefHeight="1000.0" prefWidth="1100.0" style="-fx-background-color: linear-gradient(to bottom right ,rgba(30,87,153,1) 0%,rgba(41,137,216,1) 50%,rgba(32,124,202,1) 51%,rgba(125,185,232,1) 100%);" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.papersController">
+   <children>
+      <StackPane fx:id="stackPanePapers" layoutX="-2.0" layoutY="119.0" prefHeight="680.0" prefWidth="1100.0" style="-fx-background-color: linear-gradient(to bottom, #2af598 0%, #009efd 100%);">
+         <children>
+            <TableView fx:id="generatedPaperTable" prefHeight="680.0" prefWidth="856.0">
+              <columns>
+                <TableColumn fx:id="paperNameColumn" prefWidth="179.0" text="Paper Name" />
+                  <TableColumn fx:id="createdDateColumn" prefWidth="143.66665649414062" text="Created Date" />
+                  <TableColumn fx:id="examDateColumn" prefWidth="176.66665649414062" text="Exam Date" />
+                <TableColumn fx:id="collegeColumn" minWidth="0.0" prefWidth="142.0" text="College" />
+                  <TableColumn fx:id="courseColumn" prefWidth="163.0" text="Course" />
+                  <TableColumn fx:id="purposeColumn" prefWidth="122.0" text="Purpose" />
+                  <TableColumn fx:id="createdByColumn" prefWidth="161.0" text="Created By" />
+              </columns>
+               <contextMenu>
+                  <ContextMenu fx:id="contextMenuPaperTable">
+                    <items>
+                      <MenuItem fx:id="menuItemView" mnemonicParsing="false" onAction="#handleViewPaperAction" text="View" />
+                        <MenuItem fx:id="menuItemDownload" mnemonicParsing="false" onAction="#handleDownloadPaperAction" text="Download paper" />
+                        <MenuItem fx:id="menuItemAnswerkey" mnemonicParsing="false" onAction="#handleDownloadAnswerKeyAction" text="Download answer key" />
+                        <MenuItem fx:id="menuItemDelete" mnemonicParsing="false" text="Delete" />
+                    </items>
+                  </ContextMenu>
+               </contextMenu>
+               <tooltip>
+                  <Tooltip text="Right click on any record to view , download paper or download answer key" />
+               </tooltip>
+            </TableView>
+         </children>
+      </StackPane>
+      <Label fx:id="generatedPaperLabel" alignment="TOP_LEFT" layoutX="471.0" layoutY="90.0" prefHeight="24.0" prefWidth="217.0" text="Generated Papers History" textAlignment="CENTER" textFill="WHITE">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="paperManagerLabel" alignment="CENTER" layoutX="4.0" layoutY="-1.0" prefHeight="24.0" prefWidth="152.0" text="Papers Manager" textAlignment="CENTER" textFill="WHITE">
+         <padding>
+            <Insets left="10.0" />
+         </padding>
+         <font>
+            <Font name="Microsoft Sans Serif" size="14.0" />
+         </font>
+      </Label>
+      <HBox fx:id="hboxTools" layoutX="1.0" layoutY="35.0" prefHeight="74.0" prefWidth="281.0" spacing="20.0">
+         <children>
+            <JFXButton fx:id="downloadPaperButton" alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#handleDownloadPaperAction" prefHeight="77.0" prefWidth="102.0" ripplerFill="#00c8ff" style="-fx-background-color: linear-gradient(to bottom, #2af598 0%, #009efd 100%); -fx-background-radius: 50%; -fx-border-radius: 50%;" styleClass="button-leftpane" stylesheets="@../style.css" text="Download&#10; Paper">
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="DOWNLOAD" size="14" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="downloadAnswerKeyButton" alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#handleDownloadAnswerKeyAction" prefHeight="83.0" prefWidth="103.0" ripplerFill="#00c8ff" style="-fx-background-color: linear-gradient(to bottom, #2af598 0%, #009efd 100%); -fx-background-radius: 50%; -fx-border-radius: 50%;" styleClass="button-leftpane" stylesheets="@../style.css" text="Download &#10;Answer Key">
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="DOWNLOAD" size="14" text="" />
+               </graphic>
+            </JFXButton>
+            <JFXButton fx:id="viewPaperButton" alignment="BASELINE_LEFT" buttonType="RAISED" onMouseClicked="#handleViewPaperAction" prefHeight="77.0" prefWidth="102.0" ripplerFill="#00c8ff" style="-fx-background-color: linear-gradient(to bottom, #2af598 0%, #009efd 100%); -fx-background-radius: 50%; -fx-border-radius: 50%;" styleClass="button-leftpane" stylesheets="@../style.css" text="View &#10;Paper&#10;">
+               <font>
+                  <Font name="System Bold" size="9.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="EYE" size="14" />
+               </graphic>
+            </JFXButton>
+         </children>
+      </HBox>
+      <JFXButton fx:id="newPaperButton" alignment="CENTER" buttonType="RAISED" layoutX="1009.0" layoutY="28.0" onMouseClicked="#handleMakePaperAction" prefHeight="77.0" prefWidth="77.0" ripplerFill="BLACK" style="-fx-background-color: linear-gradient(to bottom, #2af598 0%, #009efd 100%);; -fx-background-radius: 50%; -fx-border-radius: 50%;" styleClass="button-leftpane" stylesheets="@../style.css" text="Add&#10;paper&#10;">
+         <font>
+            <Font name="System Bold" size="10.0" />
+         </font>
+         <graphic>
+            <FontAwesomeIconView fill="WHITE" glyphName="PLUS" size="18" wrappingWidth="20.0" />
+         </graphic>
+      </JFXButton>
+   </children>
+</AnchorPane>

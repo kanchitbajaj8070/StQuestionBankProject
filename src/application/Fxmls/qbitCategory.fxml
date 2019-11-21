@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TreeView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPaneCatgeories" onMouseClicked="#clearSelection" prefHeight="1100.0" prefWidth="1115.0" style="-fx-background-color: linear-gradient(to top left, #1e5799 0%,#2989d8 50%,#207cca 51%,#7db9e8 100%); -fx-border-width: 20px;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controllers.categoryController">
+   <children>
+      <Label fx:id="categoryManagerLabel" alignment="BOTTOM_CENTER" layoutX="393.0" layoutY="4.0" prefHeight="30.0" prefWidth="183.0" text="Category Manager" textFill="#efefef">
+         <font>
+            <Font name="SansSerif Bold" size="18.0" />
+         </font>
+      </Label>
+      <TreeView fx:id="treeViewCategories" layoutY="55.0" prefHeight="925.0" prefWidth="997.0">
+         <contextMenu>
+            <ContextMenu>
+              <items>
+                <MenuItem fx:id="treeViewDeleteMenuItem" mnemonicParsing="false" onAction="#deleteEntryFromTreeView" text="delete" />
+                  <MenuItem fx:id="treeViewEditMenuItem" mnemonicParsing="false" text="edit name" />
+                  <MenuItem fx:id="treeViewUndeleteMenuItem" mnemonicParsing="false" onAction="#undeleteEntryFromTreeView" text="Undelete" visible="false" />
+              </items>
+            </ContextMenu>
+         </contextMenu>
+         <stylesheets>
+            <URL value="@../style.css" />
+            <URL value="@../scroll-bar.css" />
+         </stylesheets></TreeView>
+      <VBox fx:id="vboxTools" layoutX="1006.0" layoutY="68.0" prefHeight="728.0" prefWidth="104.0" spacing="20.0" style="-fx-background-color: transparent; -fx-border-radius: 15px; -fx-background-radius: 15px;">
+         <children>
+            <Button fx:id="addSubcategoryButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#handleAddSubcategoryAction" prefHeight="80.0" prefWidth="80.0" style="-fx-border-radius: 50%; -fx-border-color: white; -fx-background-radius: 50%; -fx-border-width: 3px; -fx-background-color: linear-gradient(to top right, #89f7fe 0%, #66a6ff 100%);" styleClass="button-leftpane" stylesheets="@../style.css" text="Add new &#10;subcategory">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="PLUS_CIRCLE" opacity="0.78" size="18" textAlignment="JUSTIFY" wrappingWidth="16.380972862243652" />
+               </graphic>
+            </Button>
+            <Button fx:id="addCategoryButton" alignment="CENTER" contentDisplay="TOP" mnemonicParsing="false" onMouseClicked="#handleAddCategoryAction" prefHeight="80.0" prefWidth="80.0" style="-fx-border-radius: 50%; -fx-border-color: white; -fx-background-radius: 50%; -fx-border-width: 3px; -fx-background-color: linear-gradient(to top right, #89f7fe 0%, #66a6ff 100%);" styleClass="button-leftpane" stylesheets="@../style.css" text="Add new&#10; category">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="PLUS_CIRCLE" opacity="0.78" size="18" wrappingWidth="17.714285850524902" />
+               </graphic>
+            </Button>
+            <Button fx:id="deleteCategoryButton" alignment="CENTER" contentDisplay="TOP" layoutX="10.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#deleteEntryFromTreeView" prefHeight="80.0" prefWidth="80.0" style="-fx-border-radius: 50%; -fx-border-color: white; -fx-background-radius: 50%; -fx-border-width: 3px; -fx-background-color: linear-gradient(to top right, #89f7fe 0%, #66a6ff 100%);" styleClass="button-leftpane" stylesheets="@../style.css" text="Delete ">
+               <font>
+                  <Font name="System Bold" size="10.0" />
+               </font>
+               <graphic>
+                  <FontAwesomeIconView fill="WHITE" fontSmoothingType="LCD" glyphName="TRASH" opacity="0.78" size="18" wrappingWidth="17.714285850524902" />
+               </graphic>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </VBox>
+      <CheckBox fx:id="showDeletedCheckBox" layoutX="879.0" layoutY="38.0" mnemonicParsing="false" onAction="#handleShowDeletedAction" prefHeight="11.0" prefWidth="118.0" text="Show Deleted" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></CheckBox>
+   </children>
+</AnchorPane>
